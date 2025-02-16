@@ -1,0 +1,142 @@
+openapi: "3.1.0"
+info:
+  title: "axon_user_service API"
+  description: "axon_user_service API"
+  version: "1.3.0"
+servers:
+  - url: "https://axon_user_service"
+tags:
+  - name: "User API V1"
+    description: "Operaciones para gestión de usuarios - Versión 1.3.0"
+paths:
+  /api/v1/users:
+    get:
+      summary: "GET api/v1/users"
+      operationId: "getAllUsers"
+      responses:
+        "200":
+          description: "OK"
+          content:
+            '*/*':
+              schema:
+                type: "array"
+                items:
+                  $ref: "#/components/schemas/UserResponseDTO"
+    post:
+      summary: "POST api/v1/users"
+      operationId: "createUser"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/UserRequestDTO"
+        required: true
+      responses:
+        "200":
+          description: "OK"
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/UserResponseDTO"
+  /api/v1/users/{id}:
+    get:
+      summary: "GET api/v1/users/{id}"
+      operationId: "getUserById"
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          schema:
+            type: "integer"
+            format: "int64"
+      responses:
+        "200":
+          description: "OK"
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/UserResponseDTO"
+    put:
+      summary: "PUT api/v1/users/{id}"
+      operationId: "updateUser"
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          schema:
+            type: "integer"
+            format: "int64"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/UserRequestDTO"
+        required: true
+      responses:
+        "200":
+          description: "OK"
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/UserResponseDTO"
+    delete:
+      summary: "DELETE api/v1/users/{id}"
+      operationId: "deleteUser"
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          schema:
+            type: "integer"
+            format: "int64"
+      responses:
+        "200":
+          description: "OK"
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/Void"
+components:
+  schemas:
+    UserResponseDTO:
+      type: "object"
+      properties:
+        id:
+          type: "integer"
+          format: "int64"
+        nombres:
+          type: "string"
+        apellidos:
+          type: "string"
+        rut:
+          type: "integer"
+          format: "int64"
+        dv:
+          type: "string"
+        fechaNacimiento:
+          type: "string"
+          format: "date"
+        correoElectronico:
+          type: "string"
+    UserRequestDTO:
+      type: "object"
+      properties:
+        nombres:
+          type: "string"
+        apellidos:
+          type: "string"
+        rut:
+          type: "integer"
+          format: "int64"
+        dv:
+          type: "string"
+        fechaNacimiento:
+          type: "string"
+          format: "date"
+        correoElectronico:
+          type: "string"
+        contrasena:
+          type: "string"
+    Void:
+      type: "object"
+      properties: { }

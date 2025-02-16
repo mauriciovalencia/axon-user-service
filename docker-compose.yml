@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  axon-user-service:
+    container_name: axon-user-service
+    hostname: axon-user-service
+    image: axon-user-service
+    restart: on-failure
+    build: .
+    ports:
+      - "8080:8080"
+      - "8443:8443"
+    expose:
+      - "8080"
+      - "8443"
+    networks:
+      - backend
+
+networks:
+  backend:
+    driver: bridge

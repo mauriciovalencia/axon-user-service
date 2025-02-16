@@ -1,32 +1,49 @@
-package com.axon.userservice.modules.user;
+package com.axon.userservice.modules.user.model.entity;
 
 import jakarta.persistence.*;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "users")
-public class UserEntity {
+public class UserEntity implements UserModel {
+
+    @Version
+    private Integer version = 0;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Version
-    private Integer version = 0;
+    @Column(nullable = false)
     private String nombres;
+
+    @Column(nullable = false)
     private String apellidos;
+
+    @Column(nullable = false, unique = true)
     private Long rut;
+
+    @Column(nullable = false, length = 1)
     private String dv;
 
-    private String fechaNacimiento;
+    @Column(nullable = false)
+    private LocalDate fechaNacimiento;
+
+    @Column(nullable = false, unique = true)
     private String correoElectronico;
+
+    @Column(nullable = false)
     private String contrasena;
 
-    public Long getId() {
-        return id;
-    }
+    @Column(updatable = false)
+    private LocalDateTime createdAt;
 
-    public void setId(Long id) {
-        this.id = id;
+    private LocalDateTime updatedAt;
+
+    public UserEntity() {
+        this.createdAt = LocalDateTime.now();
+        this.updatedAt = LocalDateTime.now();
     }
 
     public Integer getVersion() {
@@ -35,6 +52,14 @@ public class UserEntity {
 
     public void setVersion(Integer version) {
         this.version = version;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getNombres() {
@@ -69,11 +94,11 @@ public class UserEntity {
         this.dv = dv;
     }
 
-    public String getFechaNacimiento() {
+    public LocalDate getFechaNacimiento() {
         return fechaNacimiento;
     }
 
-    public void setFechaNacimiento(String fechaNacimiento) {
+    public void setFechaNacimiento(LocalDate fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
     }
 
@@ -91,5 +116,18 @@ public class UserEntity {
 
     public void setContrasena(String contrasena) {
         this.contrasena = contrasena;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public LocalDateTime getUpdatedAt() {
+        return updatedAt;
+    }
+
+    @PreUpdate
+    protected void onUpdate() {
+        this.updatedAt = LocalDateTime.now();
     }
 }

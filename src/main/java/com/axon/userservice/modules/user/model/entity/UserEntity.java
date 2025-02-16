@@ -12,13 +12,20 @@ public class UserEntity {
 
     @Version
     private Integer version = 0;
+    @Column(nullable = false)
     private String nombres;
+    @Column(nullable = false)
     private String apellidos;
+    @Column(nullable = false, unique = true)
     private Long rut;
+    @Column(nullable = false, length = 1)
     private String dv;
-
+    @Temporal(TemporalType.DATE)
+    @Column(nullable = false)
     private String fechaNacimiento;
+    @Column(nullable = false, unique = true)
     private String correoElectronico;
+    @Column(nullable = false)
     private String contrasena;
 
     public Long getId() {

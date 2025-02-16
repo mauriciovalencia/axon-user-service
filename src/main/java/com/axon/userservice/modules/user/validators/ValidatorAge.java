@@ -10,7 +10,9 @@ import java.time.Period;
 @Component
 public class ValidatorAge implements ConstraintValidator<ValidAge, LocalDate> {
 
-    private final int minAge;
+    private int minAge = 18; // Valor por defecto para evitar errores en los tests
+
+    public ValidatorAge() {} // Constructor sin argumentos
 
     public ValidatorAge(UserConfig config) {
         this.minAge = config.getUserMinAge();

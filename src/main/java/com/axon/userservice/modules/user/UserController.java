@@ -3,6 +3,7 @@ package com.axon.userservice.modules.user;
 import com.axon.userservice.modules.user.dto.UserRequestDTO;
 import com.axon.userservice.modules.user.dto.UserResponseDTO;
 import com.axon.userservice.modules.user.service.IUserService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -10,7 +11,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/users")
+@RequestMapping("/api/v1/users")
+@Tag(name = "User API V1", description = "Operaciones para gestión de usuarios - Versión 1.2.0")
 public class UserController {
 
     private final IUserService service;

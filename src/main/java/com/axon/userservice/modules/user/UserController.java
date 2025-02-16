@@ -12,7 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/users")
-@Tag(name = "User API V1", description = "Operaciones para gestión de usuarios - Versión 1.2.0")
+@Tag(name = "User API V1", description = "Operaciones para gestión de usuarios - Versión 1.3.0")
 public class UserController {
 
     private final IUserService service;

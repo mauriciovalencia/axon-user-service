@@ -15,10 +15,10 @@ User API that serves CRUD operations for user management, using a modular monoli
 # on localhost
 
 # base url
-http://localhost:8080
+http://localhost:8080/api/v1
 
 # url user-service
-http://localhost:8080/user
+http://localhost:8080/api/v1/users
 ```
 
 ## Swagger

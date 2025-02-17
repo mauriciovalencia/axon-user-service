@@ -1,6 +1,6 @@
 package com.axon.userservice.security;
 
-import org.springframework.beans.factory.annotation.Value;
+import com.axon.userservice.config.EnvConfig;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -16,14 +16,15 @@ import java.util.List;
 @Configuration
 public class SecurityConfig {
 
-    @Value("${user_service.api-key}")
-    private String userServiceApiKey;
+    private final String userServiceApiKey;
+    private final String allowedOrigins;
+    private final String allowedMethods;
 
-    @Value("${cors.allowed-origins}")
-    private String allowedOrigins;
-
-    @Value("${cors.allowed-methods}")
-    private String allowedMethods;
+    public SecurityConfig(EnvConfig envConfig) {
+        this.userServiceApiKey = envConfig.userServiceApiKey();
+        this.allowedOrigins = envConfig.allowedOrigins();
+        this.allowedMethods = envConfig.allowedMethods();
+    }
 
     @Bean
     public ApiKeyAuthenticationFilter apiKeyAuthenticationFilter() {

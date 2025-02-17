@@ -1,14 +1,13 @@
 package com.axon.userservice.security;
 
-import jakarta.servlet.FilterChain;
-import jakarta.servlet.ServletException;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
+import jakarta.servlet.FilterChain;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -18,8 +17,8 @@ public class ApiKeyAuthenticationFilter extends OncePerRequestFilter {
 
     private final String apiKey;
 
-    public ApiKeyAuthenticationFilter(@Value("${user_service.api-key}") String apiKey) {
-        this.apiKey = apiKey;
+    public ApiKeyAuthenticationFilter(String userServiceApiKey) {
+        this.apiKey = userServiceApiKey;
     }
 
     @Override
@@ -40,4 +39,3 @@ public class ApiKeyAuthenticationFilter extends OncePerRequestFilter {
         filterChain.doFilter(request, response);
     }
 }
-

@@ -71,14 +71,34 @@ Business
 ## Installation
 
 ```bash
+# Step by step
+git clone https://github.com/mauriciovalencia/axon-user-service.git
+
+# copy .env values to .env execution
+cp .env.example .env
+
+# install web application libs
 mvn clean install
+
+# run application on local
+mvn spring-boot:run
+# or
+# run application on docker
+docker-compose build --no-cache && docker-compose up -d --force-recreate 
+
 ```
 
 ## Execution
 
 ```bash
+# install or reinstall
+mvn clean install
+
+# run all test
+mvn clean test
+
 # run
-mvn start
+mvn spring-boot:run
 ```
 
 ## Docker

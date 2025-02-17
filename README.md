@@ -1,6 +1,6 @@
 # Axon User Service
 
-User API that serve CRUD endpoint actions for managment users
+User API that serve CRUD endpoint actions for managment users, using modular monolitic architecture
 
 **Table of Contents**
 - [Swagger](#markdown-header-swagger)

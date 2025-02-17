@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  axon-user-service:
+    container_name: axon-user-service
+    hostname: axon-user-service
+    image: axon-user-service
+    restart: on-failure
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "${USER_SERVICE_PORT}:${USER_SERVICE_PORT}"
+      - "8443:8443"
+    environment:
+      - USER_SERVICE_PORT=${USER_SERVICE_PORT}
+    env_file:
+      - .env
+    networks:
+      - backend
+
+networks:
+  backend:
+    driver: bridge

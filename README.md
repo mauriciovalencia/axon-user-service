@@ -1,2 +1,95 @@
-# axon-user-service
-user service for axon "no existent company"
+# Axon User Service
+
+User API that serve CRUD endpoint actions for managment users
+
+**Table of Contents**
+- [Swagger](#markdown-header-swagger)
+- [Environment requirements](#markdown-header-environment-requirements)
+- [Environment Variables](#markdown-header-environment-variables)
+- [Installation](#markdown-header-installation)
+- [Docker](#markdown-header-docker) 
+- [Execution](#markdown-header-execution)
+
+## URL
+```bash
+# on localhost
+
+# base url
+http://localhost:8080
+
+# url user-service
+http://localhost:8080/user
+```
+
+## Swagger
+```bash
+# on localhost
+
+swagger-ui
+http://localhost:8080/swagger-ui/index.html
+
+open-api json specification
+http://localhost:8080/v3/api-docs #
+```
+
+## Environment requirements
+```
+- Java 17.0.14, vendor: Amazon.com Inc or similar
+- Maven 3.8.4 or more
+```
+
+Then, on local environment case, just cloning the repo in your local environment, and set values
+in the properties application.properties and described in detail in this document.
+
+## Environment Variables
+
+Operational
+
+| Name           | Type   | Options | Default      | Description                |
+|----------------|--------|---------|--------------|----------------------------|
+| spring.application.name     | String    |         | user-service | Application name           |
+| server.port  | String | 8080     | 8080          | Port server of application |
+
+Functional
+
+| Name                           | Type   | Options | Default                     | Description                                 |
+|--------------------------------|--------|---------|-----------------------------|---------------------------------------------|
+| cors.allowed-origins           | String |         | http://localhost:5173       | Clients that will consume this service      |
+| cors.allowed-methods           | String |         | GET,POST,PUT,DELETE,OPTIONS | Global http methods allowed for each client |
+| spring.security.user.name      | String |         | "must to be empty"          | Basic Spring security user                  |
+| spring.security.user.password  | String |         | "must to be empty"          | Basic Sprint Security generated password    |
+| user_service.api-key           | String |         | "nowayjose"                 | Api-Key for clients                         |
+
+Business
+
+| Name                           | Type   | Options | Default | Description                                            |
+|--------------------------------|--------|---------|---------|--------------------------------------------------------|
+| user_module.password-min-length           | Number |         | 8       | Minimal length pasword Example: Password1@             |
+| user_module.min-age           | Number |         | 18      | Minimal user age for beign created in database service |
+
+
+## Installation
+
+```bash
+mvn clean install
+```
+
+## Execution
+
+```bash
+# run
+mvn start
+```
+
+## Docker
+```bash
+# by docker run
+docker build -t user-service .
+docker run user-service
+
+# by compose
+docker-compose build --no-cache && docker-compose up -d --force-recreate
+# or
+docker-compose build && docker-compose up -d
+
+```

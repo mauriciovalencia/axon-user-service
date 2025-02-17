@@ -30,6 +30,10 @@ http://localhost:8080/swagger-ui/index.html
 
 open-api json specification
 http://localhost:8080/v3/api-docs #
+
+inside the project
+user_moduule: src/main/java/com/axon/userservice/modules/user/config/axon_user_service-openapi.yaml
+
 ```
 
 ## Environment requirements

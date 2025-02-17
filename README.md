@@ -134,4 +134,4 @@ docker-compose build && docker-compose up -d
 - implement feature toggle, for enable somethings like swagger-ui
 - implement more functional tests from postman-cli
 - implement change to another data-base
-When?!, maybe the next 3 last versión incoming!.
+When?!, maybe the next 3 last version incoming!.

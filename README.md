@@ -22,7 +22,7 @@ http://localhost:8080/user
 ```
 
 ## Swagger
-```bash
+```html
 # on localhost
 
 swagger-ui

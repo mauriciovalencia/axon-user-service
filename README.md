@@ -151,7 +151,7 @@ Rules
 Password1@
 Abc123@!
 StrongPass1$ , and the length determined by user_module.password-min-length.
-- Edit User: When editing a user, it's not necessary to include the data in the request body.
+- Edit User: When editing a user, it's not necessary to include the id attribute in the request body.
 
 Note
 The "Get All Users" endpoint currently does not support pagination. This feature may be added in the next version.

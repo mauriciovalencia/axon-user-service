@@ -158,10 +158,10 @@ The "Get All Users" endpoint currently does not support pagination. This feature
 
 
 ## Future Improvements
-- Make more tests, controller and validators
-- implement custom exceptions and messages by errors to api consumer
-- implement better logs
-- implement feature toggle, for enable somethings like swagger-ui
-- implement more functional tests from postman-cli
-- implement change to another data-base
-When?!, maybe the next 3 last version incoming!.
+- Add more tests, including for controllers and validators.
+- Implement custom exceptions and error messages for API consumers.
+- Improve logging functionality.
+- Implement feature toggles to enable features like Swagger UI.
+- Add more functional tests using Postman CLI.
+- Implement support for switching to another database.
+When? Possibly in the next 3 releases.

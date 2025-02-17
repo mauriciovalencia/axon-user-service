@@ -129,7 +129,7 @@ docker-compose build && docker-compose up -d
 
 ## API use
 
-## The User Data JSON
+### The User Data JSON
 The following is the JSON structure that contains the user's data:
 
 ```json

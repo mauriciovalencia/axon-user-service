@@ -115,11 +115,11 @@ docker-compose build && docker-compose up -d
 ```
 
 ## Future Improvements
-# * Make more tests, controller and validators
-# * implement custom exceptions and messages by errors to api consumer
-# * implement better logs
-# * implement feature toggle, for enable somethings like swagger-ui
-# * implement more functional tests from postman-cli
-# * implement change to another data-base
+- Make more tests, controller and validators
+- implement custom exceptions and messages by errors to api consumer
+- implement better logs
+- implement feature toggle, for enable somethings like swagger-ui
+- implement more functional tests from postman-cli
+- implement change to another data-base
 When?!, maybe the next 3 last versión incoming!.
 

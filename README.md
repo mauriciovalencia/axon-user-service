@@ -132,4 +132,3 @@ docker-compose build && docker-compose up -d
 - implement more functional tests from postman-cli
 - implement change to another data-base
 When?!, maybe the next 3 last versión incoming!.
-

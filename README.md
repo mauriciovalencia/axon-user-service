@@ -104,8 +104,8 @@ mvn spring-boot:run
 ## Docker
 ```bash
 # by docker run
-docker build -t user-service .
-docker run user-service
+docker build -t axon-user-service .
+docker run axon-user-service
 
 # by compose
 docker-compose build --no-cache && docker-compose up -d --force-recreate
@@ -113,3 +113,12 @@ docker-compose build --no-cache && docker-compose up -d --force-recreate
 docker-compose build && docker-compose up -d
 
 ```
+
+## Future Improvements
+# * Make more tests, controller and validators
+# * implement custom exceptions and messages by errors to api consumer
+# * implement better logs
+# * implement feature toggle, for enable somethings like swagger-ui
+# * implement more functional tests from postman-cli
+# * implement change to another data-base
+When?!, maybe the next 3 last versión incoming!.

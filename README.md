@@ -150,7 +150,7 @@ Rules
 - Password Requirements: The password must follow this format:
 Password1@
 Abc123@!
-StrongPass1$
+StrongPass1$ , and the length determined by user_module.password-min-length.
 - Edit User: When editing a user, it's not necessary to include the data in the request body.
 
 Note

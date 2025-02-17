@@ -31,6 +31,11 @@ http://localhost:8080/swagger-ui/index.html
 open-api json specification
 http://localhost:8080/v3/api-docs #
 
+any option just installing google chrome extension  [ModHeader]([https://ejemplo.com](https://modheader.com/)
+<img width="1496" alt="image" src="https://github.com/user-attachments/assets/68779d4e-b8fb-4204-8da5-292191f4bdef" />
+
+or just 
+
 inside the project
 user_moduule: src/main/java/com/axon/userservice/modules/user/config/axon_user_service-openapi.yaml
 

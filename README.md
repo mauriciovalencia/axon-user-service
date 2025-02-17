@@ -127,6 +127,37 @@ docker-compose build && docker-compose up -d
 
 ```
 
+# API use
+
+## User Data JSON
+
+The following is the JSON structure that contains the user's data:
+
+```json
+{
+  "firstName": "jose",
+  "lastName": "no way",
+  "rut": "11111111",
+  "dv": "1",
+  "birthDate": "1990-01-01",
+  "email": "abc1@mail.com",
+  "password": "Password1@"
+}
+```
+Rules
+- Unique RUT: You cannot create a user with the same RUT.
+- Age Validation: Users cannot be created with a future birth date. The minimum age is determined by user_module.min-age.
+- Unique Email: You cannot create a user with the same email address.
+- Password Requirements: The password must follow this format:
+Password1@
+Abc123@!
+StrongPass1$
+- Edit User: When editing a user, it's not necessary to include the data in the request body.
+
+Note
+The "Get All Users" endpoint currently does not support pagination. This feature may be added in the next version.
+
+
 ## Future Improvements
 - Make more tests, controller and validators
 - implement custom exceptions and messages by errors to api consumer

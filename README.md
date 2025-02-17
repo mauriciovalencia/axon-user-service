@@ -134,13 +134,13 @@ The following is the JSON structure that contains the user's data:
 
 ```json
 {
-  "firstName": "jose",
-  "lastName": "no way",
+  "nombres": "jose",
+  "apellidos": "no way",
   "rut": "11111111",
   "dv": "1",
-  "birthDate": "1990-01-01",
-  "email": "abc1@mail.com",
-  "password": "Password1@"
+  "fechaNacimiento": "1990-01-01",
+  "correoElectronico": "abc1@mail.com",
+  "contrasena": "Password1@"
 }
 ```
 Rules

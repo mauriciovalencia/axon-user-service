@@ -160,7 +160,7 @@ The "Get All Users" endpoint currently does not support pagination. This feature
 Just few little things for bear in mind.
 - API-KEY & API BASE PATH
 
-  If you want set like a global variables inside de project.
+  If you want set like a global variables inside the project.
 
   <img width="1331" alt="image" src="https://github.com/user-attachments/assets/2058e738-28ec-4374-bc8d-c3a1952a70c8" />
   

@@ -156,6 +156,16 @@ StrongPass1$ , and the length determined by user_module.password-min-length.
 Note
 The "Get All Users" endpoint currently does not support pagination. This feature may be added in the next version.
 
+### Postman use
+Just few little things for bear in mind.
+- API-KEY & API BASE PATH
+  If you want set like a global variables inside de project.
+  <img width="1365" alt="image" src="https://github.com/user-attachments/assets/6ea48e5c-f051-4129-bf93-db7c49f1c987" />
+  then, setting up in each endpoint header & box url request like this.
+  <img width="1071" alt="image" src="https://github.com/user-attachments/assets/e01f08c7-db3e-470f-a897-b0c8fd45de66" />
+  
+
+
 
 ## Future Improvements
 - Add more tests, including for controllers and validators.
